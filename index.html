@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrix Line</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="title-wrap">
+    <h1>Matrix Line</h1>
+    <div class="subtitle" id="subtitle">Row reduction practice</div>
+  </div>
+  <div class="toolbar">
+    <select id="levelSelect" title="Question level">
+      <option value="1">Level 1 · 3×3 easy</option>
+      <option value="2">Level 2 · 3×3 medium</option>
+      <option value="3">Level 3 · 3×3 hard</option>
+      <option value="4">Level 4 · 4×4 easy</option>
+      <option value="5">Level 5 · 4×4 medium</option>
+      <option value="6">Level 6 · 4×4 hard</option>
+      <option value="7">Level 7 · 4×6 easy</option>
+      <option value="8">Level 8 · 4×5 medium</option>
+      <option value="9">Level 9 · 4×5 hard</option>
+      <option value="10">Level 10 · 6×6 easy</option>
+      <option value="11">Level 11 · 5×5 medium</option>
+      <option value="12">Level 12 · 5×6 hard</option>
+    </select>
+    <button id="newQuestionBtn" class="primary">New Question</button>
+    <span class="toolbar-separator"></span>
+    <button id="addMatrixBtn">+ Add Matrix</button>
+    <button id="answerBtn">+ Answer Box</button>
+    <button id="checkBtn">Check Answer</button>
+    <button id="solutionBtn">Show Solution</button>
+    <span class="toolbar-separator"></span>
+    <button id="saveFileBtn">Save File</button>
+    <label class="file-label" for="loadFileInput">Load File</label>
+    <input id="loadFileInput" type="file" accept=".json,.matrixline" />
+    <button id="clearBtn" class="danger">Clear</button>
+    <span class="status" id="status">Saved locally</span>
+  </div>
+</header>
+
+<main>
+  <div class="question-strip">
+    <span id="questionLabel">Level 1 · 3×3 easy</span>
+    <span class="dot">•</span>
+    <span>Reduce the augmented matrix to RREF, showing your row operations.</span>
+  </div>
+  <p class="hint">Each arrow can contain multiple row operations. Put one operation per line; they are applied top to bottom.</p>
+  <div id="workspace"></div>
+</main>
+
+<div id="toast" class="toast" aria-live="polite"></div>
+<div id="modalBackdrop" class="modal-backdrop hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <strong id="modalTitle">Step feedback</strong>
+      <button id="modalClose" class="icon-btn">×</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
